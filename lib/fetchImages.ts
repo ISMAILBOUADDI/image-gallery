@@ -42,7 +42,8 @@ export default async function fetchImages(url: string): Promise<ImagesResults | 
         return parsedData
 
     } catch (e) {
-        // Will show in terminal console 
+        // Will show in terminal console
+        //catch any prbm in console
         if (e instanceof Error) console.log(e.stack)
     }
 }
