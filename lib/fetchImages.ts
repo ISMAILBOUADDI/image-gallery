@@ -27,12 +27,11 @@ export default async function fetchImages(url: string): Promise<ImagesResults | 
                 Authorization: env.PEXELS_API_KEY
             }
         })
-
+        
         if (!res.ok) throw new Error("Fetch Images error!\n")
 
         const imagesResults: ImagesResults = await res.json()
-
-        //console.log(imagesResults)
+        // console.log(imagesResults)
 
         // Parse data with Zod schema 
         const parsedData = ImagesSchemaWithPhotos.parse(imagesResults)
